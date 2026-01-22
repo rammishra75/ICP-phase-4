@@ -16,13 +16,13 @@ class Solution {
         return profit;
     }
 }
-
+```
 
 # 28. Find the Index of the First Occurrence in a String
 # Solution_link : https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/submissions/1883643196
 
 # Code:
-
+```
 class Solution {
     public int strStr(String haystack, String needle) {
         if(!haystack.contains(needle)) return -1;
@@ -41,13 +41,13 @@ class Solution {
         return strt;
     }
 }
-
+```
 
 # 15. 3Sum
 # Solution_link : https://leetcode.com/problems/3sum/submissions/1556268102
 
 # Code: 
-
+```
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
@@ -82,13 +82,14 @@ class Solution {
         return ans;
     }
 }
+```
 
 
 # 204. Count Primes
 # Solution_Link : https://leetcode.com/problems/count-primes/submissions/1617419064
 
 # Code:
-
+```
 class Solution {
     public int countPrimes(int n) {
         if(n <= 2) return 0;
@@ -111,13 +112,13 @@ class Solution {
         return cnt;
     }
 }
-
+```
 
 # 41. First Missing Positive
 # Solution_Link : https://leetcode.com/problems/first-missing-positive/submissions/1885932716
 
 # Code:
-
+```
 class Solution {
     public int firstMissingPositive(int[] nums) {
         int target = 1;
@@ -133,12 +134,13 @@ class Solution {
         return target;
     }
 }
+```
 
 # 4. Median of Two Sorted Arrays
 # Solution_Link : https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/1892929618
 
 # Code :
-
+```
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int i = 0;
@@ -173,14 +175,14 @@ class Solution {
         return ans / 2.0;
     }
 }
-
+```
 # Weekly Challenges:
 
 # 455. Assign Cookies
 # Solution_Link : https://leetcode.com/problems/assign-cookies/submissions/1647090207
 
 # Code:
-
+```
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
         Arrays.sort(g);
@@ -196,12 +198,13 @@ class Solution {
         return r;
     }
 }
+```
 
 # 575. Distribute Candies
 # Solution_Link: https://leetcode.com/problems/distribute-candies/submissions/1892960668
 
 # Code:
-
+```
 class Solution {
     public int distributeCandies(int[] candyType) {
         HashSet<Integer> set = new HashSet<>();
@@ -213,12 +216,13 @@ class Solution {
         return set.size(); 
     }
 }
+```
 
 # 992. Subarrays with K Different Integers
 # Solution_Link : https://leetcode.com/problems/distribute-candies/submissions/1892960668
 
 # Code:
-
+```
 class Solution {
     public int distributeCandies(int[] candyType) {
         HashSet<Integer> set = new HashSet<>();
@@ -230,3 +234,4 @@ class Solution {
         return set.size(); 
     }
 }
+```
