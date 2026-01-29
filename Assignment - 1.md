@@ -219,19 +219,38 @@ class Solution {
 ```
 
 # 992. Subarrays with K Different Integers
-# Solution_Link : https://leetcode.com/problems/distribute-candies/submissions/1892960668
+# Solution_Link : https://leetcode.com/problems/subarrays-with-k-different-integers/submissions/1643256228
 
 # Code:
 ```
 class Solution {
-    public int distributeCandies(int[] candyType) {
-        HashSet<Integer> set = new HashSet<>();
-        for(int i: candyType){
-            set.add(i);
+    public int func(int[] arr, int a){
+        int cnt = 0;
+        HashMap<Integer, Integer> mpp = new HashMap<>();
+        int l = 0;
+        int r = 0;
+        int n = arr.length;
+        while(r < n){
+            if(mpp.containsKey(arr[r])){
+                mpp.put(arr[r], mpp.get(arr[r]) + 1);
+            }
+            else{
+                mpp.put(arr[r], 1);
+            }
+            while(mpp.size() > a){
+                mpp.put(arr[l], mpp.get(arr[l]) - 1);
+                if(mpp.get(arr[l]) == 0){
+                    mpp.remove(arr[l]);
+                }
+                l++;
+            }
+            cnt += (r - l + 1);
+            r++;
         }
-        int n = candyType.length;
-        if(set.size() >= (n / 2)) return n/2;
-        return set.size(); 
+        return cnt;
+    }
+    public int subarraysWithKDistinct(int[] nums, int k) {
+        return func(nums, k) - func(nums, k - 1);
     }
 }
 ```
