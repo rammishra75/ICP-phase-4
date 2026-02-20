@@ -109,6 +109,34 @@ class Solution {
 }
 ```
 
+# 3)Segment Tree -query of sum-II
+# Solution Link : Its on gfg
+# Solution Code:
+```
+class Solution {
+    List<Integer> querySum(int n, int arr[], int q, int queries[]) {
+        // code here
+        int[] pref = new int[n];
+        for(int i = 0; i < n; i++){
+            pref[i] = arr[i];
+            if(i > 0) pref[i] += pref[i - 1];
+        }
+        List<Integer> ans = new ArrayList<>();
+        int i = 0;
+        while(i < (2 * q)){
+            int strt = queries[i] - 1;
+            int end = queries[i + 1] - 1;
+            int sum = pref[end];
+            if(strt - 1 >= 0) sum -= pref[strt - 1];
+            ans.add(sum);
+            i += 2;
+        }
+        return ans;
+    }
+}
+```
+
+
 # 1382. Balance a Binary Search Tree
 # Solution Link : https://leetcode.com/problems/balance-a-binary-search-tree/submissions/1922885604
 
